@@ -1,36 +1,30 @@
 package clases;
 
-import java.util.Calendar;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class SensorTemperatura {
-	
-		
-	private int idsensortemperatura;
+public class GPS {
+	private int idsensorgps;
 	private String nombre;
-	private float valor;
+	private float valorLatitud;
+	private float valorLongitud;
 	private float precision;
 	private int idDispositivoAutobus;
-	public SensorTemperatura() {
+	public GPS() {
 		super();
 	}
-	public SensorTemperatura(int idsensortemperatura, String nombre, float valor, float precision,
+	public GPS(int idsensorgps, String nombre, float valorLatitud, float valorLongitud, float precision,
 			int idDispositivoAutobus) {
 		super();
-		this.idsensortemperatura = idsensortemperatura;
+		this.idsensorgps = idsensorgps;
 		this.nombre = nombre;
-		this.valor = valor;
+		this.valorLatitud = valorLatitud;
+		this.valorLongitud = valorLongitud;
 		this.precision = precision;
 		this.idDispositivoAutobus = idDispositivoAutobus;
 	}
-	public int getIdsensortemperatura() {
-		return idsensortemperatura;
+	public int getIdsensorgps() {
+		return idsensorgps;
 	}
-	public void setIdsensortemperatura(int idsensortemperatura) {
-		this.idsensortemperatura = idsensortemperatura;
+	public void setIdsensorgps(int idsensorgps) {
+		this.idsensorgps = idsensorgps;
 	}
 	public String getNombre() {
 		return nombre;
@@ -38,11 +32,17 @@ public class SensorTemperatura {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public float getValor() {
-		return valor;
+	public float getValorLatitud() {
+		return valorLatitud;
 	}
-	public void setValor(float valor) {
-		this.valor = valor;
+	public void setValorLatitud(float valorLatitud) {
+		this.valorLatitud = valorLatitud;
+	}
+	public float getValorLongitud() {
+		return valorLongitud;
+	}
+	public void setValorLongitud(float valorLongitud) {
+		this.valorLongitud = valorLongitud;
 	}
 	public float getPrecision() {
 		return precision;
@@ -61,10 +61,11 @@ public class SensorTemperatura {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + idDispositivoAutobus;
-		result = prime * result + idsensortemperatura;
+		result = prime * result + idsensorgps;
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + Float.floatToIntBits(precision);
-		result = prime * result + Float.floatToIntBits(valor);
+		result = prime * result + Float.floatToIntBits(valorLatitud);
+		result = prime * result + Float.floatToIntBits(valorLongitud);
 		return result;
 	}
 	@Override
@@ -75,10 +76,10 @@ public class SensorTemperatura {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		SensorTemperatura other = (SensorTemperatura) obj;
+		GPS other = (GPS) obj;
 		if (idDispositivoAutobus != other.idDispositivoAutobus)
 			return false;
-		if (idsensortemperatura != other.idsensortemperatura)
+		if (idsensorgps != other.idsensorgps)
 			return false;
 		if (nombre == null) {
 			if (other.nombre != null)
@@ -87,17 +88,20 @@ public class SensorTemperatura {
 			return false;
 		if (Float.floatToIntBits(precision) != Float.floatToIntBits(other.precision))
 			return false;
-		if (Float.floatToIntBits(valor) != Float.floatToIntBits(other.valor))
+		if (Float.floatToIntBits(valorLatitud) != Float.floatToIntBits(other.valorLatitud))
+			return false;
+		if (Float.floatToIntBits(valorLongitud) != Float.floatToIntBits(other.valorLongitud))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "SensorTemperatura [idsensortemperatura=" + idsensortemperatura + ", nombre=" + nombre + ", valor="
-				+ valor + ", precision=" + precision + ", idDispositivoAutobus=" + idDispositivoAutobus + "]";
+		return "GPS [idsensorgps=" + idsensorgps + ", nombre=" + nombre + ", valorLatitud=" + valorLatitud
+				+ ", valorLongitud=" + valorLongitud + ", precision=" + precision + ", idDispositivoAutobus="
+				+ idDispositivoAutobus + "]";
 	}
 	
 	
 	
-	
+
 }

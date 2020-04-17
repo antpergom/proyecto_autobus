@@ -1,36 +1,30 @@
 package clases;
 
-import java.util.Calendar;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class SensorTemperatura {
+public class SensorProximidad {
 	
-		
-	private int idsensortemperatura;
+	
+	private int idsensorproximidad;
 	private String nombre;
 	private float valor;
 	private float precision;
 	private int idDispositivoAutobus;
-	public SensorTemperatura() {
+	public SensorProximidad() {
 		super();
 	}
-	public SensorTemperatura(int idsensortemperatura, String nombre, float valor, float precision,
+	public SensorProximidad(int idsensorproximidad, String nombre, float valor, float precision,
 			int idDispositivoAutobus) {
 		super();
-		this.idsensortemperatura = idsensortemperatura;
+		this.idsensorproximidad = idsensorproximidad;
 		this.nombre = nombre;
 		this.valor = valor;
 		this.precision = precision;
 		this.idDispositivoAutobus = idDispositivoAutobus;
 	}
-	public int getIdsensortemperatura() {
-		return idsensortemperatura;
+	public int getIdsensorproximidad() {
+		return idsensorproximidad;
 	}
-	public void setIdsensortemperatura(int idsensortemperatura) {
-		this.idsensortemperatura = idsensortemperatura;
+	public void setIdsensorproximidad(int idsensorproximidad) {
+		this.idsensorproximidad = idsensorproximidad;
 	}
 	public String getNombre() {
 		return nombre;
@@ -61,7 +55,7 @@ public class SensorTemperatura {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + idDispositivoAutobus;
-		result = prime * result + idsensortemperatura;
+		result = prime * result + idsensorproximidad;
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + Float.floatToIntBits(precision);
 		result = prime * result + Float.floatToIntBits(valor);
@@ -75,10 +69,10 @@ public class SensorTemperatura {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		SensorTemperatura other = (SensorTemperatura) obj;
+		SensorProximidad other = (SensorProximidad) obj;
 		if (idDispositivoAutobus != other.idDispositivoAutobus)
 			return false;
-		if (idsensortemperatura != other.idsensortemperatura)
+		if (idsensorproximidad != other.idsensorproximidad)
 			return false;
 		if (nombre == null) {
 			if (other.nombre != null)
@@ -93,10 +87,9 @@ public class SensorTemperatura {
 	}
 	@Override
 	public String toString() {
-		return "SensorTemperatura [idsensortemperatura=" + idsensortemperatura + ", nombre=" + nombre + ", valor="
-				+ valor + ", precision=" + precision + ", idDispositivoAutobus=" + idDispositivoAutobus + "]";
+		return "SensorProximidad [idsensorproximidad=" + idsensorproximidad + ", nombre=" + nombre + ", valor=" + valor
+				+ ", precision=" + precision + ", idDispositivoAutobus=" + idDispositivoAutobus + "]";
 	}
-	
 	
 	
 	
